@@ -1,31 +1,35 @@
 import React from 'react';
 import { useState } from 'react';
 import Form from './components/Form';
-import './App.css';
 
 function App() {
-  const [teamMembers, setTeamMember] = useState('');
-
+  const [teamMembers, setTeamMember] = useState([]);
+  console.log(teamMembers)
   return (
     <div className="App">
+
       <header className="App-header">
+        <h1> TEAM BUILDER </h1>
       </header>
+
       <Form teamMembers={teamMembers} setTeamMember={setTeamMember}/>
+      
       <div>
-            <h1>Current Members:</h1>
-            <ul>
-                {teamMembers.map(member => {
-                    return(
-                    <li>
-                        <h3>{member.name}</h3>
-                        <h4>{member.roll}</h4>
-                        <p>{member.email}</p>
-                        <button>Edit Member</button>
-                    </li>
-                    )           
-                })}
-            </ul>
+            <h2>Current Members:</h2>
+              <>
+              <div>
+                {teamMembers.map(member => (
+                  <>
+                    <h3>{member.name}</h3>
+                    <h4>{member.roll}</h4>
+                    <p>{member.email}</p>
+                    <button>Edit Member</button>
+                  </>
+                ))}
+              </div>
+              </>
         </div>
+
     </div>
   );
 }
