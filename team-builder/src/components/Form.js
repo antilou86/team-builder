@@ -5,13 +5,14 @@ function Form(props) {
     //const {teamMembers, setTeamMember} = props;
 console.log(props)
     function handleChange(event) {
-        props.setTeamMember({ ...props.teamMembers, [event.target.id]: event.target.value });
-        console.log(event.target.value)
+        //console.log(event.target.value)
+        event.preventDefault();
+        props.setTeamMember([...props.teamMembers, [event.target.name]= event.target.value]);
     }
 
     function handleSubmit(event) {
         event.preventDefault();
-        props.setTeamMember({ ...props.teamMembers, [event.target.id]: event.target.value });
+        props.setTeamMember([ ...props.teamMembers, [event.target.name]= event.target.value]);
         console.log(props.teamMembers)
     }
     return (
@@ -19,14 +20,15 @@ console.log(props)
             <fieldset>
                 <form onSubmit={event => handleSubmit(event)}>
                     <>
-                    <label>Input new member name:</label>
-                    <input type='text' id='name' value={props.teamMembers.name} onChange={handleChange}></input>
-
-                    <label>Roll:</label>
-                    <input type='text' id='roll' value={props.teamMembers.roll} onChange={handleChange}></input>
-
-                    <label>Member Email:</label>
-                    <input type='text' id='email' value={props.teamMembers.email} onChange={handleChange}></input>
+                    <label>Input new member name:
+                        <input type='text' name='name' value={props.teamMembers.name} onChange={handleChange}></input>
+                    </label>
+                    <label>Roll:
+                        <input type='text' name='roll' value={props.teamMembers.roll} onChange={handleChange}></input>
+                    </label>
+                    <label>Member Email:
+                        <input type='text' name='email' value={props.teamMembers.email} onChange={handleChange}></input>
+                    </label>
 
                     <button>Submit!</button>
                     </>
