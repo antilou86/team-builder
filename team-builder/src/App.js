@@ -3,7 +3,7 @@ import { useState } from 'react';
 import Form from './components/Form';
 
 function App() {
-  const [teamMembers, setTeamMember] = useState([]);
+  const [teamMembers, setTeamMember] = useState([{name:'', roll:'', email:''}]);
   console.log(teamMembers)
   return (
     <div className="App">

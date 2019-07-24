@@ -5,15 +5,14 @@ function Form(props) {
     //const {teamMembers, setTeamMember} = props;
 console.log(props)
     function handleChange(event) {
-        //console.log(event.target.value)
-        event.preventDefault();
-        props.setTeamMember([...props.teamMembers, [event.target.name]= event.target.value]);
+        console.log(event.target.value)
+        //props.setTeamMember([...props.teamMembers, {[event.target.name]: event.target.value}]);
     }
 
     function handleSubmit(event) {
         event.preventDefault();
-        props.setTeamMember([ ...props.teamMembers, [event.target.name]= event.target.value]);
-        console.log(props.teamMembers)
+        props.setTeamMember([ ...props.teamMembers, {[event.target.name]: event.target.value}]);
+        console.log(props.teamMembers);
     }
     return (
         <>
