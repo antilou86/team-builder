@@ -1,10 +1,7 @@
 import React from 'react';
-import { useState } from 'react';
-import TeamDisplay from './TeamDisplay';
+
 
 function Form() {
-
-    const [teamMembers, setTeamMember] = useState('');
 
     function handleChange(event) {
         setTeamMember({ ...teamMembers, [event.target.id]: event.target.value });
@@ -32,7 +29,6 @@ function Form() {
                     <button>Submit!</button>
                 </form>
             </fieldset>
-            <TeamDisplay teamMembers={teamMembers} />
         </>
     )
 }
