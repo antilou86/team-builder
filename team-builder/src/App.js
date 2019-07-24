@@ -3,8 +3,9 @@ import { useState } from 'react';
 import Form from './components/Form';
 
 function App() {
-  const [teamMembers, setTeamMember] = useState([{name:'', roll:'', email:''}]);
-  let users = {};
+  const [teamMembers, setTeamMember] = useState([]);
+  const [user, setUser] = useState({});
+  
   console.log(teamMembers)
   return (
     <div className="App">
@@ -13,7 +14,7 @@ function App() {
         <h1> TEAM BUILDER </h1>
       </header>
 
-      <Form teamMembers={teamMembers} setTeamMember={setTeamMember} users={users}/>
+      <Form teamMembers={teamMembers} setTeamMember={setTeamMember} user={user} setUser={setUser}/>
       
       <div>
             <h2>Current Members:</h2>
